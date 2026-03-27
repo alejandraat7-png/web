@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Alejandra Trujillo</title>
+    
+    <link href="https://fonts.google.com/specimen/Bebas+Neue?preview.script=Latn" rel="stylesheet">
+
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f3f4df; 
+             font-family: 'Bebas Neue', sans-serif;
+            color: #000;
+            overflow: hidden; 
+            height: 100vh;
+        }
+
+       
+        .menu-superior {
+            position: absolute;
+            top: 40px;
+            left: 60px;
+            z-index: 100;
+        }
+
+        .menu-superior ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .menu-superior a {
+            text-decoration: none;
+            color: #000;
+            font-size: 24px;
+            letter-spacing: 2px;
+        }
+
+        
+            .grid-layout {
+            display: grid;
+            grid-template-columns: 20% 60% 20%;
+            flex: 1; 
+            align-items: center;
+            padding: 0 5%;
+            position: relative;
+        }
+
+        
+        .col-izq {
+            text-align: relative;
+            animation: entrarIzq 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        .nombre-artista {
+            font-size: 10px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        /* Columna Central: Ilustración GRANDE */
+        .col-central {
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .ilustracion-principal {
+            width: 1000%; 
+            max-width: 1180px;
+            height: auto;
+            animation: fadeUp 1.2s ease-out forwards;
+        }
+
+        
+        .col-der {
+            display: flex;
+            flex-direction: revert-layer;
+            align-items: flex-end;
+            text-align: revert-layer;
+            gap: 80px;
+        }
+
+        .bio-texto {
+            font-size: 18px;
+            line-height: 1.2;
+            max-width: 300px;
+            animation: entrarDer 1s ease-out forwards;
+            opacity: 0;
+        }
+
+
+        .footer-redes {
+            width: 100%;
+            padding: 20px 50px 40px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .contacto-label {
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        .botones-flex {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-social {
+            width: 40px;
+            height: 40px;
+            border: 1.5px solid #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #000;
+            font-size: 14px;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .btn-social:hover {
+            background: #000;
+            color: #f6f3eb;
+        }
+
+       
+        .ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 1px solid #000;
+            border-radius: 50%;
+            animation: pulsar 2s infinite;
+        }
+
+       
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes entrarIzq {
+            from { opacity: 0; transform: translateX(-40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes entrarDer {
+            from { opacity: 0; transform: translateX(40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes pulsar {
+            0% { transform: scale(1); opacity: 0.6; }
+            100% { transform: scale(1.6); opacity: 0; }
+        }
+
+
+    
+
+    </style>
+</head>
+<body>
+
+    <header class="menu-superior">
+    <ul>
+        <li><a href="videos.html">VIDEOS</a></li>
+        <li><a href="galeria.html">GALERÍA</a></li>
+        <li><a href="index.html">HOME</a></li>
+    </ul>
+</header>
+
+    <main class="grid-layout">
+        <div class="col-izq" style="animation-delay: 0.8s;">
+            <p class="nombre-artista"></p>
+        </div>
+
+        <div class="col-central">
+            <img src="img/yo.png" alt="Alejandra" class="ilustracion-principal">
+        </div>
+
+        <div class="col-der">
+            <p class="bio-texto" style="animation-delay: 1s;">
+                ¡HOLA! SOY ALEJANDRA TRUJILLO, ESTUDIANTE DE DISEÑO VISUAL, ME CONSIDERO UNA PERSONA CREATIVA, RESILIENTE Y RESPONSABLE. AMO ESCUCHAR MÚSICA, LA FOTOGRAFÍA Y TENGO COMO PASATIEMPO EL DIBUJO.
+            </p>
+
+            </div>
+            </main>
+
+    <footer class="footer-redes">
+    <span style="font-size: 18px; letter-spacing: 1px;">CONTACTO</span>
+    
+    <a href="https://www.instagram.com/ale.dis.art?igsh=MW0xODFtNnoxM3UxbQ==" target="_blank" class="btn-social">
+        IG <span class="ring"></span>
+    </a>
+    
+    <a href="https://wa.me/qr/GRSIM7X6NT66N1" target="_blank" class="btn-social">
+        WA <span class="ring"></span>
+    </a>
+</footer>
+
+</body>
+</html>

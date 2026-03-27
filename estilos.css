@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Alejandra Trujillo Cárdenas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <header class="menu-superior">
+        <nav>
+            <ul>
+                <li><a href="#">VIDEOS</a></li>
+                <li><a href="#">GALERÍA</a></li>
+                <li><a href="#">HOME</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenedor-principal">
+
+        <div class="columna-izquierda">
+            <h1 class="nombre-artista">Alejandra Trujillo Cárdenas</h1>
+        </div>
+
+        <div class="columna-central">
+            <img src="img/yo.png" alt="Ilustración de Alejandra" class="ilustracion-principal">
+        </div>
+
+        <div class="columna-derecha">
+            <p class="biografia-texto">
+                ¡HOLA! SOY ALEJANDRA ESTUDIANTE DE DISEÑO VISUAL, ME CONSIDERO UNA PERSONA CREATIVA, RESILIENTE Y RESPONSABLE. AMO ESCUCHAR MÚSICA, LA FOTOGRAFÍA Y TENGO COMO PASATIEMPO EL DIBUJO, EN ESTA PÁGINA PODRÁS ENCONTRAR UN POCO SOBRE MI TRABAJO.
+            </p>
+
+            <div class="redes-sociales">
+                <span class="contacto-text">CONTACTO</span>
+                <div class="iconos-wrapper">
+                    <a href="https://www.instagram.com/tu_usuario" target="_blank" class="boton-social instagram">
+                        <span class="icono-label">IG</span> 
+                        <span class="pulse-ring"></span>
+                    </a>
+                    <a href="https://wa.me/tu_numero" target="_blank" class="boton-social whatsapp">
+                        <span class="icono-label">WA</span>
+                        <span class="pulse-ring"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>

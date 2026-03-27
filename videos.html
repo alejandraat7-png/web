@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos - Alejandra Trujillo</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- ESTILOS GENERALES (Consistentes con tu Portafolio) --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f3f4df; /* Tu color crema */
+            font-family: 'Bebas Neue', sans-serif;
+            color: #000;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Menú Superior */
+        .menu-superior {
+            position: absolute;
+            top: 40px;
+            left: 60px;
+            z-index: 100;
+        }
+
+        .menu-superior ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .menu-superior a {
+            text-decoration: none;
+            color: #000;
+            font-size: 24px;
+            letter-spacing: 2px;
+        }
+
+        /* Título de Sección */
+        .header-videos {
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .header-videos h1 {
+            font-size: 60px;
+            letter-spacing: 4px;
+        }
+
+        .header-videos p {
+            font-size: 20px;
+            color: #555;
+        }
+
+        /* --- CUADRÍCULA DE VIDEOS (2x2) --- */
+        .contenedor-principal {
+            flex: 1;
+            padding: 0 8% 120px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .grid-videos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            width: 100%;
+            max-width: 1100px;
+        }
+
+        .video-card {
+            width: 100%;
+            background: #000;
+            aspect-ratio: 16 / 9; /* Mantiene la proporción perfecta */
+            opacity: 0;
+            animation: fadeUp 0.8s ease-out forwards;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Asegura que el video llene el cuadro */
+            display: block;
+        }
+
+        /* --- PIE DE PÁGINA (REDES) --- */
+        .footer-redes {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 20px 60px 40px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 20px;
+            background: linear-gradient(transparent, #f3f4df 60%);
+        }
+
+        .btn-social {
+            width: 45px;
+            height: 45px;
+            border: 2px solid #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #000;
+            position: relative;
+        }
+
+        .ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 1px solid #000;
+            border-radius: 50%;
+            animation: pulsar 2s infinite;
+        }
+
+        /* --- ANIMACIONES --- */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulsar {
+            0% { transform: scale(1); opacity: 0.6; }
+            100% { transform: scale(1.6); opacity: 0; }
+        }
+
+        /* Adaptación para celulares */
+        @media (max-width: 768px) {
+            .grid-videos { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="menu-superior">
+    <ul>
+        <li><a href="videos.html">VIDEOS</a></li>
+        <li><a href="galeria.html">GALERÍA</a></li>
+        <li><a href="index.html">HOME</a></li>
+    </ul>
+</header>
+
+    <div class="header-videos">
+        <h1>VIDEOS</h1>
+        <p>Alejandra Trujillo Cárdenas</p>
+    </div>
+
+   <main class="contenedor-principal">
+        <div class="grid-videos">
+            
+            <div class="video-card" style="animation-delay: 0.2s;">
+                <video controls poster="img/portada1.jpg">
+                    <source src="video/mango.mp4" type="video/mp4">
+                   
+                </video>
+            </div>
+
+            <div class="video-card" style="animation-delay: 0.4s;">
+                <video controls poster="img/portada2.jpg">
+                    <source src="video/mercedes.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="video-card" style="animation-delay: 0.6s;">
+                <video controls poster="img/portada3.jpg">
+                    <source src="video/cuerpo.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="video-card" style="animation-delay: 0.8s;">
+                <video controls poster="img/portada4.jpg">
+                    <source src="video/jazz.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-redes">
+    <span style="font-size: 18px; letter-spacing: 1px;">CONTACTO</span>
+    
+    <a href="https://www.instagram.com/ale.dis.art?igsh=MW0xODFtNnoxM3UxbQ==" target="_blank" class="btn-social">
+        IG <span class="ring"></span>
+    </a>
+    
+    <a href="https://wa.me/qr/GRSIM7X6NT66N1" target="_blank" class="btn-social">
+        WA <span class="ring"></span>
+    </a>
+</footer>
+
+</body>
+</html>

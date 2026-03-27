@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Trabajos - Alejandra Trujillo</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- ESTILOS GENERALES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f3f4df; /* Tu color crema */
+            font-family: 'Bebas Neue', sans-serif;
+            color: #000;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* --- MENÚ SUPERIOR --- */
+        .menu-superior {
+            position: absolute;
+            top: 40px;
+            left: 60px;
+            z-index: 100;
+        }
+
+        .menu-superior ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .menu-superior a {
+            text-decoration: none;
+            color: #000;
+            font-size: 24px;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .menu-superior a:hover { color: #666; }
+
+        /* --- CABECERA DE GALERÍA --- */
+        .header-galeria {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .header-galeria h1 {
+            font-size: 60px;
+            letter-spacing: 4px;
+            font-weight: normal;
+        }
+
+        .header-galeria p {
+            font-size: 20px;
+            color: #555;
+            letter-spacing: 1px;
+        }
+
+        /* --- GRID DE LA GALERÍA (Misma estructura que tu imagen) --- */
+        .contenedor-principal {
+            flex: 1;
+            padding: 0 5% 100px; /* Espacio para el footer */
+            display: flex;
+            justify-content: center;
+        }
+
+        .grid-trabajos {
+            display: grid;
+            /* 4 columnas */
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* Contenedor de cada imagen para el efecto Zoom */
+        .item-galeria {
+            position: relative;
+            overflow: hidden;
+            background-color: #fff; /* Fondo blanco por si el PNG es transparente */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            animation: fadeUp 0.8s ease-out forwards;
+        }
+
+        .item-galeria img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease; /* Duración del Zoom */
+        }
+
+        /* Efecto Zoom al pasar el mouse */
+        .item-galeria:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Ajuste de tamaños específicos según tu diseño */
+        .alto { grid-row: span 1; } /* Para las imágenes verticales */
+
+        /* --- RETRASO DE ANIMACIÓN (Efecto Cascada) --- */
+        .item-galeria:nth-child(1) { animation-delay: 0.1s; }
+        .item-galeria:nth-child(2) { animation-delay: 0.2s; }
+        .item-galeria:nth-child(3) { animation-delay: 0.3s; }
+        .item-galeria:nth-child(4) { animation-delay: 0.4s; }
+        .item-galeria:nth-child(5) { animation-delay: 0.5s; }
+        .item-galeria:nth-child(6) { animation-delay: 0.6s; }
+        .item-galeria:nth-child(7) { animation-delay: 0.7s; }
+        .item-galeria:nth-child(8) { animation-delay: 0.8s; }
+
+        /* --- PIE DE PÁGINA (REDES) --- */
+        .footer-redes {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 20px 60px 40px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 20px;
+            background: linear-gradient(transparent, #f3f4df 50%); /* Difuminado para no tapar */
+        }
+
+        .btn-social {
+            width: 45px;
+            height: 45px;
+            border: 2px solid #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #000;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .btn-social:hover { background: #000; color: #f3f4df; }
+
+        .ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 1px solid #000;
+            border-radius: 50%;
+            animation: pulsar 2s infinite;
+        }
+
+        /* --- ANIMACIONES --- */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulsar {
+            0% { transform: scale(1); opacity: 0.6; }
+            100% { transform: scale(1.6); opacity: 0; }
+        }
+
+        /* Responsive para tablets y celular */
+        @media (max-width: 900px) {
+            .grid-trabajos { grid-template-columns: repeat(2, 1fr); }
+            .alto { grid-row: span 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="menu-superior">
+    <ul>
+        <li><a href="videos.html">VIDEOS</a></li>
+        <li><a href="galeria.html">GALERÍA</a></li>
+        <li><a href="index.html">HOME</a></li>
+    </ul>
+</header>
+
+    <div class="header-galeria">
+        <h1>GALERÍA DE TRABAJOS</h1>
+        <p>Alejandra Trujillo Cárdenas</p>
+    </div>
+
+    <main class="contenedor-principal">
+        <div class="grid-trabajos">
+            <div class="item-galeria"><img src="img/ilustracion.jpg" alt="Trabajo 1"></div>
+            <div class="item-galeria alto"><img src="img/mango.png" alt="Trabajo 2"></div>
+            <div class="item-galeria alto"><img src="img/fabula.png" alt="Trabajo 3"></div>
+            <div class="item-galeria alto"><img src="img/hibrido.png" alt="Trabajo 4"></div>
+            
+            <div class="item-galeria"><img src="img/chocorramo.png" alt="Trabajo 5"></div>
+            <div class="item-galeria"><img src="img/ojo.png" alt="Trabajo 6"></div>
+            <div class="item-galeria"><img src="img/sydney.png" alt="Trabajo 7"></div>
+            <div class="item-galeria"><img src="img/insecto.png" alt="Trabajo 8"></div>
+        </div>
+    </main>
+
+    <footer class="footer-redes">
+    <span style="font-size: 18px; letter-spacing: 1px;">CONTACTO</span>
+    
+    <a href="https://www.instagram.com/ale.dis.art?igsh=MW0xODFtNnoxM3UxbQ==" target="_blank" class="btn-social">
+        IG <span class="ring"></span>
+    </a>
+    
+    <a href="https://wa.me/qr/GRSIM7X6NT66N1" target="_blank" class="btn-social">
+        WA <span class="ring"></span>
+    </a>
+</footer>
+
+</body>
+</html>
